@@ -1,0 +1,1 @@
+alter tablespace temp add tempfile;
