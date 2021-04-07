@@ -1,0 +1,1 @@
+EXECUTE DBMS_STATS.GATHER_SCHEMA_STATS(ownname => '&owner');
