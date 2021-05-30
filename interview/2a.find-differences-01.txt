@@ -1,0 +1,7 @@
+The countries table was copied over to a table countries3. Both have the same definition, as follows:
+	country_id CHARACTER (2) PRIMARY KEY,
+	country_name CHARACTER VARYING (40),
+Unfortunately some data was deleted from the new tables accidentally and you need to identify the rows that were accidentally deleted.
+Write a SQL to list the rows that exist on countries but not in countries3.
+
+(Answer in find-differences-01.sql)

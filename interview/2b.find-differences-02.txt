@@ -1,0 +1,4 @@
+The situation is a bit more complicated as you learn that not only data was deleted from the countries3 table but some new data was also inserted in countries3 after the data was copied over. 
+Your task is to write a query that lists all the differences between the 2 tables (countries and countries3)
+
+(Answer in find-differences-02.sql)
