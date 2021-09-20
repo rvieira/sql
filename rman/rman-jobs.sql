@@ -1,3 +1,7 @@
+-- Author: Ricardo Vieira
+-- Created: 2018
+-- Description: list backup job details
+
 select
     SESSION_KEY,
     INPUT_TYPE,

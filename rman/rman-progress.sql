@@ -1,3 +1,7 @@
+-- Author: Ricardo Vieira
+-- Created: 2018
+-- Description:
+
 select
   sid,
   start_time,

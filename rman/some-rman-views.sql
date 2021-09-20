@@ -1,3 +1,7 @@
+-- Author: Ricardo Vieira
+-- Created: 2018
+-- Description:
+
 set lines 200 pages 100
 
 col value for a70
