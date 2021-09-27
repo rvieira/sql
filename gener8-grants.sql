@@ -1,3 +1,4 @@
+set lines 200 pages 0
 select
     'grant '||p.privilege||' on '||p.owner||'.'||p.table_name||' to '||p.grantee||';' "Grant Statement"
 from
@@ -5,4 +6,5 @@ from
     dba_objects o 
 where
     p.owner = o.owner and
-    p.table_name = o.object_name;
+    p.table_name = o.object_name
+order by p.grantee, p.owner, p.table_name, p.privilege;
