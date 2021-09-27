@@ -7,7 +7,7 @@ from
 where
     p.owner = o.owner and
     p.table_name = o.object_name and
-    p.owner not in ('SYS','SYSTEM','XDB','GSMADMIN_INTERNAL','WMSYS')
+    p.owner not in ('SYS','SYSTEM','XDB','GSMADMIN_INTERNAL','WMSYS','DBSNMP','OUTLN')
 order by 
     p.grantee, 
     p.owner, 
