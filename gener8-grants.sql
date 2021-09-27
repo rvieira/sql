@@ -6,5 +6,10 @@ from
     dba_objects o 
 where
     p.owner = o.owner and
-    p.table_name = o.object_name
-order by p.grantee, p.owner, p.table_name, p.privilege;
+    p.table_name = o.object_name and
+    p.owner not in ('SYS','SYSTEM')
+order by 
+    p.grantee, 
+    p.owner, 
+    p.table_name, 
+    p.privilege;
