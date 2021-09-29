@@ -1,1 +1,1 @@
-alter tablespace &ts add file size 30G;
+alter tablespace &ts add datafile size 30G;
