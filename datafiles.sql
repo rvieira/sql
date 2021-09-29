@@ -1,3 +1,5 @@
+set lines 200 pages 100
+
 select
   file_name,
   tablespace_name,
