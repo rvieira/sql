@@ -1,4 +1,5 @@
 set lines 200 pages 100
+col file_name for a80
 
 select
   file_name,
