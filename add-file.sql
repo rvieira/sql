@@ -1,0 +1,1 @@
+alter tablespace &ts add file size 30G;
