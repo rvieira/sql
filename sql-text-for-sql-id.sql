@@ -3,5 +3,5 @@
 ------------------------------
 select *
 from v$sqltext
-where SQL_ID = $sqlid 
-order by piece desc;
+where SQL_ID = '&sqlid' 
+order by piece asc;
