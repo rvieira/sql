@@ -1,6 +1,6 @@
 set pages 100 lines 265
 col tablespace_name for a20
-col filename for a55
+col file_name for a55
 
 select
     df.tablespace_name,
@@ -12,6 +12,7 @@ from
     (
         select
             file_id,
+            file_name,
             tablespace_name,
             trunc(bytes/1024/1024) as size_mb,
             trunc(greatest(bytes,maxbytes)/1024/1024) as max_size_mb
