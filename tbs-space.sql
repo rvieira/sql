@@ -7,7 +7,10 @@ select
     df.file_name,
     df.size_mb,
     f.free_mb,
-    df.max_size_mb
+    df.max_size_mb,
+    f.free_mb + (df.max_size_mb - df.size_mb) as max_free_mb,
+    (df.max_size_mb - (f.free_mb + (df.max_size_mb - df.size_mb)))/max_size_mb*100 as used_pct,
+    100-(df.max_size_mb - (f.free_mb + (df.max_size_mb - df.size_mb)))/max_size_mb*100 as free_pct
 from
     (
         select
