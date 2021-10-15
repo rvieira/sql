@@ -7,6 +7,6 @@
 -- Last Modified: 
 -- ------------------------------------------------------------------------------------------------------------
 set lines 200 pages 100
-col directory_path for a10
+col directory_path for a100
 
 select * from dba_directories;
