@@ -4,7 +4,7 @@ col file_name for a80
 select
   file_name,
   tablespace_name,
-  bytes
+  bytes/1024/1024/1024 GB
 from
   dba_data_files
 order by
