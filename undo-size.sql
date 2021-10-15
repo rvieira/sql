@@ -1,5 +1,5 @@
 select 
-  sum(df.bytes) as undo_size 
+  sum(df.bytes)/1024/1024/1024 as undo_size_GB 
 from 
   v$datafile df, 
   v$tablespace ts, 
