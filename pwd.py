@@ -7,6 +7,8 @@
 
 import secrets
 import string
+
+password_length=20
 alphabet = string.ascii_letters + string.digits + '._-+'
-password = ''.join(secrets.choice(alphabet) for i in range(20))  # for a 20-character password
+password = ''.join(secrets.choice(alphabet) for i in range(password_length))  # for a 20-character password
 print(password)
