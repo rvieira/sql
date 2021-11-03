@@ -11,9 +11,8 @@ FROM
     v$session_longops lops, 
     v$session s
 WHERE 
-    s.sid = lops.sid and
-    lops.username = 'VIEIRA'
-ORDER BY 6;
+    s.sid = lops.sid 
+ORDER BY 6 desc;
 
 SELECT 
     sl.sid, 
