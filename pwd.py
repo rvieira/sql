@@ -8,9 +8,7 @@ import secrets
 import string
 
 def compliant_pwd(candidate_pwd):
-    check_upper = False
-    check_lower = False
-    check_special_char = False
+    check_upper = check_lower = check_special_char = False
     
 #    print('try --> '+candidate_pwd)
     for letter in candidate_pwd:
