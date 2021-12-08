@@ -1,4 +1,3 @@
-# Source Code List Targets
 if (len(sys.argv) <> 1 ):
     print "Usage: emcli @list_targets.py OSname"
     exit()
@@ -13,5 +12,3 @@ for DB in myDBs.out()['data']:
     # we print only the targets if their OS name equal to the first argument of script
     if ( OS.lower() == sys.argv[0].lower() ):
         print DB['TARGET_NAME'],hostinfo.out()['data'][0]['TYPE_QUALIFIER1']
-
-# End of script list_targets.py
