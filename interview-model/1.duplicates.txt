@@ -1,0 +1,8 @@
+Given the table countries defined below, give the SQL query to list the duplicate rows  in the table.
+
+	country_id CHARACTER (2) PRIMARY KEY,
+	country_name CHARACTER VARYING (40),
+
+Assume duplicate rows to be rows containing the same country_id and country_name. 
+
+(Answer in find-duplicates.sql)
