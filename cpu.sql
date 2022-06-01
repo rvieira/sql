@@ -1,3 +1,4 @@
+-- This show the CPU utilisation
 SELECT
    s.username,
    t.sid,
