@@ -1,3 +1,6 @@
+set lines 200
+col owner for a40
+
 select 
    owner,
    sum(bytes)/1024/1024/1024 schema_size_gig
