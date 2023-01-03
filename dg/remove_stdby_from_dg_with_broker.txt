@@ -1,0 +1,22 @@
+  1. If you are using the Data Guard Broker, you need to remove it from the Broker using steps:
+  A)To remove from Broker:
+
+  On the Primary database:
+  dgmgrl> connect sys
+  dgmgrl> disable database <db_unique_name>; << The Standby db_unique_name you are removing
+  dgmgrl> remove database <db_unique_name>;
+  dgmgrl> show configuration verbose;
+  -- the Standby you are removing will no longer show in the configuration
+
+  B) On the Primary database:
+ 
+
+Go into sqlplus and make sure it removed the standby from the Data Guard configuration from the DG Broker parameters:
+  sql> show parameter log_archive_dest_n                        << replace the 'n' with the # for the Standby Redo transport destination to make sure it's removed
+  -- if it's not removed then you'll have to remove it manually using:;
+  sql> alter system set log_archive_dest_n='' scope=both; << use sid='*'; at the end if you are RAC
+  sql> show parameter log_archive_config
+  -- make sure it removed the Standby's db_unique_name from the list
+  -- It's a dynamic parameter so you can alter system and remove it from the list for example:
+     i.e. alter system set log_archive_config='dg_config=(PRIMARY,STANDBY1,STANDBY2)' scope=both; << use sid='*'; at the end if you are RAC
+  C) Remove the broker dr.dat configuration files(i.e. show parameter dg_broker_config) from the Standby database machine that you are removing only and if it's the only standby in the Data Guard configuration on the that machine.
