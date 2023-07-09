@@ -1,9 +1,6 @@
   2. If you are not using the Data Guard Broker, then to remove it manually do:
 
- 
   A) On the Primary database:
-
-  
 
    a) Go into sqlplus and remove it's configuration from the LAD parameter:
      sql> show parameter log_archive_dest_n << replace the 'n' with the # for the Standby Redo tranport destination
@@ -13,20 +10,15 @@
      -- It's a dynamic parameter so you can alter system and remove it from the list for example:
      sql> alter system set log_archive_config='dg_config=(PRIMARY,STANDBY1,STANDBY2)' scope=both; << use sid='*'; at the end if you are RAC
 
-
    b) If the fal_server is pointing to the Standby you are removing,then you need to remove it from the fal_server parameter:
   alter system set fal_server='STANDBY1,STANDBY2' scope=both; << use sid='*'; at the end if you are RAC
-
 
  B) On the Standby database:
   Note: If you are going to remove the standby from it's machine, then you don't need to do the following.
 
- 
-
   a) Reset any log_archive_dest_n parameters that may be pointing back to the primary or the other standby
      sql> show parameter log_archive_dest_
      sql> alter system set log_archive_dest_n='' scope=both; << use sid='*'; at the end if you are RAC
-
 
   b) remove the log_archive_config parameter
     sql> alter system reset log_archive_config scope=both; << use sid='*'; at the end if you are RAC
