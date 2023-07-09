@@ -16,7 +16,7 @@ SELECT
 FROM 
     v$asm_alias a,
     v$asm_diskgroup b, 
-    vSasm_file c
+    v$asm_file c
 WHERE 
     a.group_number = b.group_number
 AND a.group_number = c.group_number(+)
